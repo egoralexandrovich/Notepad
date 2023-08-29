@@ -55,17 +55,13 @@ namespace NotepadC_
         private void mnuClose_Click(object sender, EventArgs e)
         {
             if(this.MdiChildren.Count() > 0)//избегаем ошибки, когда нет открытых форм
-            {
                 this.ActiveMdiChild.Close();
-            }
         }
 
         private void mnuCloseAll_Click(object sender, EventArgs e)
         {
             foreach(DopForm dopForm in this.MdiChildren)
-            {
                 this.ActiveMdiChild.Close();
-            }
         }
 
         private void mnuExit_Click(object sender, EventArgs e)
