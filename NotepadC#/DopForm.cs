@@ -52,9 +52,7 @@ namespace NotepadC_
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if(openFileDialog.ShowDialog() == DialogResult.Cancel)
-            {
                 return;
-            }
             filename = openFileDialog.FileName;
             string fileText = File.ReadAllText(filename);
             richTextBox1.Text = fileText;
@@ -83,13 +81,9 @@ namespace NotepadC_
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
                 filename1 = saveFileDialog.FileName;
-            }
             else
-            {
                 return;
-            }
             try
             {
                 StreamWriter writer = new StreamWriter(filename1);
@@ -106,23 +100,17 @@ namespace NotepadC_
         public void Cut()
         { // Вырезание текста
             if(richTextBox1.TextLength > 0)
-            {
                 richTextBox1.Cut();
-            }
         }
         public void Copy()
         { // Копирование текста
             if (richTextBox1.TextLength > 0)
-            {
                 richTextBox1.Copy();
-            }
         }
         public void Paste()
         {
             if(richTextBox1.Text.Length > 0)
-            {
                 richTextBox1.Paste();
-            }
         }
         public void Delete()
         {
@@ -131,9 +119,7 @@ namespace NotepadC_
         public void SelectAll()
         {
             if(richTextBox1.TextLength > 0)
-            {
                 richTextBox1.SelectAll();
-            }
         }
         public new void Font()
         {
@@ -153,9 +139,7 @@ namespace NotepadC_
         public void richTextBox1_MouseUp(object sender, MouseEventArgs e)
         {
             if(e.Button == MouseButtons.Right)
-            {
                 richTextBox1.ContextMenuStrip = contextMenuStrip1;
-            }
         }
 
         private void cmsCut_Click(object sender, EventArgs e)
@@ -188,11 +172,9 @@ namespace NotepadC_
             //Если переменная IsSaved имеет значение false, т. е. документ пытаются закрыть и он не сохранен
             if (IsSaved == false)
                 //Появляется диалоговое окно, предлагающее сохранить документ.
-                if (MessageBox.Show("Вы хотите сохранить изменения в " + this.filename + "?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 //Если была нажата  кнопка Yes, вызываем метод Save
-                {
+                if (MessageBox.Show("Вы хотите сохранить изменения в " + this.filename + "?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     this.Save();
-                }
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
