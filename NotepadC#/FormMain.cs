@@ -23,7 +23,7 @@ namespace NotepadC_
         int number = 1;
 
         private void mnuNew_Click(object sender, EventArgs e)
-        {
+        { // Добавление новой формы
             DopForm dopForm = new DopForm(number);
             number++;
             dopForm.MdiParent = this;//помещаем дочернюю форму в родительскую
@@ -31,21 +31,21 @@ namespace NotepadC_
         }
 
         private void mnuOpen_Click(object sender, EventArgs e)
-        {
+        { // Открытие файла
             DopForm dopForm = (DopForm)(this.ActiveMdiChild);
             dopForm.Open();
             mnuSave.Enabled = true;
         }
 
         private void mnuSave_Click(object sender, EventArgs e)
-        {
+        { // Сохранение файла
             DopForm dopForm = (DopForm)this.ActiveMdiChild;
             dopForm.Save();
             mnuSave.Enabled = true;
             dopForm.IsSaved = true;
         }
         private void mnuSaveAs_Click(object sender, EventArgs e)
-        {
+        { // Сохранить как
             DopForm dopForm = (DopForm)(this.ActiveMdiChild);
             dopForm.SaveAs();
             mnuSave.Enabled = true;
@@ -53,19 +53,19 @@ namespace NotepadC_
         }
 
         private void mnuClose_Click(object sender, EventArgs e)
-        {
+        { // Закрытие формы
             if(this.MdiChildren.Count() > 0)//избегаем ошибки, когда нет открытых форм
                 this.ActiveMdiChild.Close();
         }
 
         private void mnuCloseAll_Click(object sender, EventArgs e)
-        {
+        { // Закрытие всех форм
             foreach(DopForm dopForm in this.MdiChildren)
                 this.ActiveMdiChild.Close();
         }
 
         private void mnuExit_Click(object sender, EventArgs e)
-        {
+        { // Выход из приложения
             Application.Exit();
         }
 
