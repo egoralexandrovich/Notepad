@@ -22,6 +22,13 @@ namespace NotepadC_
         ToolStripLabel timeLabel;
         ToolStripLabel infoLabel;
         Timer timer;
+
+        public string filename;
+        public bool IsSaved = false;
+        private void DopForm_Load(object sender, EventArgs e)
+        {
+
+        }
         public DopForm(int number)
         {
             InitializeComponent();
@@ -45,8 +52,6 @@ namespace NotepadC_
             dateLabel.Text = DateTime.Now.ToLongDateString();
             timeLabel.Text = DateTime.Now.ToLongTimeString();
         }
-        public string filename;
-        public bool IsSaved = false;
 
         public void Open()
         {
@@ -130,10 +135,6 @@ namespace NotepadC_
         { // Работа с цветом формы
             colorDialog1.ShowDialog();
             richTextBox1.BackColor = colorDialog1.Color;
-        }
-        private void DopForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         public void richTextBox1_MouseUp(object sender, MouseEventArgs e)
