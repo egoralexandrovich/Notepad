@@ -65,7 +65,7 @@ namespace NotepadC_
         }
         public void Save()
         {
-            if(filename == null ^ filename == "")
+            if(filename == null ^ filename == string.Empty)
             {
                 if(saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
@@ -82,7 +82,7 @@ namespace NotepadC_
         }
         public void SaveAs()
         {
-            string filename1 = "";
+            string filename1 = string.Empty;
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -119,7 +119,7 @@ namespace NotepadC_
         }
         public void Delete()
         { // Удаление текста
-            richTextBox1.SelectedText = "";
+            richTextBox1.SelectedText = string.Empty;
         }
         public void SelectAll()
         { // Выделение текста
