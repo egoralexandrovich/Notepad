@@ -108,26 +108,26 @@ namespace NotepadC_
                 richTextBox1.Copy();
         }
         public void Paste()
-        {
-            if(richTextBox1.Text.Length > 0)
+        { // Копирование текста
+            if (richTextBox1.Text.Length > 0)
                 richTextBox1.Paste();
         }
         public void Delete()
-        {
+        { // Удаление текста
             richTextBox1.SelectedText = "";
         }
         public void SelectAll()
-        {
-            if(richTextBox1.TextLength > 0)
+        { // Выделение текста
+            if (richTextBox1.TextLength > 0)
                 richTextBox1.SelectAll();
         }
         public new void Font()
-        {
+        { // Работа с шрифтом
             fontDialog1.ShowDialog();
             richTextBox1.Font = fontDialog1.Font;
         }
         public void Color()
-        {
+        { // Работа с цветом формы
             colorDialog1.ShowDialog();
             richTextBox1.BackColor = colorDialog1.Color;
         }
@@ -137,33 +137,33 @@ namespace NotepadC_
         }
 
         public void richTextBox1_MouseUp(object sender, MouseEventArgs e)
-        {
-            if(e.Button == MouseButtons.Right)
+        { // Контекстное меню при нажатии на правую кнопку мыши
+            if (e.Button == MouseButtons.Right)
                 richTextBox1.ContextMenuStrip = contextMenuStrip1;
         }
 
         private void cmsCut_Click(object sender, EventArgs e)
-        {
+        { // Вырезание текста
             Cut();
         }
 
         private void cmsCopy_Click(object sender, EventArgs e)
-        {
+        { // Копирование текста
             Copy();
         }
 
         private void cmsPaste_Click(object sender, EventArgs e)
-        {
+        { // Вставка текста
             Paste();
         }
 
         private void cmsDelete_Click(object sender, EventArgs e)
-        {
+        { // Удаление текста
             Delete();
         }
 
         private void cmsSelectAll_Click(object sender, EventArgs e)
-        {
+        { // Выделение текста
             SelectAll();
         }
 
