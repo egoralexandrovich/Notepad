@@ -21,22 +21,6 @@ namespace NotepadC_
         {
             this.Close();
         }
-
-        private void linkLabel1_Click(object sender, EventArgs e)
-        {
-            //Добавляем блок для обработки исключений — по разным причинам 
-            //пользователь может не получить доступа к ресурсу.
-            try
-            {
-                //Вызываем метод VisitLink, определенный ниже
-                VisitLink();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Не удалось открыть ссылку", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-        }
         //Создаем метод VisitLink
         private void VisitLink()
         {
@@ -47,6 +31,22 @@ namespace NotepadC_
             //установленного по умолчанию, и открытия ссылки
             System.Diagnostics.Process.Start("http://www.notepadcsharp.com");
         }
+        private void linkLabel1_Click(object sender, EventArgs e)
+        {
+            //Добавляем блок для обработки исключений — по разным причинам 
+            //пользователь может не получить доступа к ресурсу.
+            try
+            {
+                //Вызываем метод VisitLink
+                VisitLink();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Не удалось открыть ссылку", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+        //Создаем метод VisitLink для второй ссылки
         private void VisitLink2()
         {
             linkLabel2.LinkVisited = true;
