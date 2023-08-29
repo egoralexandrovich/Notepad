@@ -70,43 +70,43 @@ namespace NotepadC_
         }
 
         private void mnuCut_Click(object sender, EventArgs e)
-        {
+        { // Вырезание текста
             DopForm dopForm = (DopForm)(this.ActiveMdiChild);
             dopForm.Cut();
         }
 
         private void mnuCopy_Click(object sender, EventArgs e)
-        {
+        { // Копирование текста
             DopForm dopForm = (DopForm)(this.ActiveMdiChild);
             dopForm.Copy();
         }
 
         private void mnuPaste_Click(object sender, EventArgs e)
-        {
+        { // Вставка текста
             DopForm dopForm = (DopForm)(this.ActiveMdiChild);
             dopForm.Paste();
         }
 
         private void mnuDelete_Click(object sender, EventArgs e)
-        {
+        { // Удаление текста
             DopForm dopForm = (DopForm)(this.ActiveMdiChild);
             dopForm.Delete();
         }
 
         private void mnuSelectAll_Click(object sender, EventArgs e)
-        {
+        { // Выделение текста
             DopForm dopForm = (DopForm)(this.ActiveMdiChild);
             dopForm.SelectAll();
         }
 
         private void fontToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        { // Шрифт
             DopForm dopForm = (DopForm)(this.ActiveMdiChild);
             dopForm.Font();
         }
 
         private void colorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        { // Цвет формы
             DopForm dopForm = (DopForm)(this.ActiveMdiChild);
             dopForm.Color();
         }
@@ -132,7 +132,7 @@ namespace NotepadC_
         }
 
         private void mnuAbout_Click(object sender, EventArgs e)
-        {
+        { // Информация о программе
             About about = new About();
             about.Show();
         }
@@ -158,7 +158,7 @@ namespace NotepadC_
         }
 
         private void tsNew_Click(object sender, EventArgs e)
-        {
+        { // Новый документ
             DopForm dopForm = new DopForm(number);
             number++;
             dopForm.MdiParent = this;//помещаем дочернюю форму в родительскую
@@ -166,14 +166,14 @@ namespace NotepadC_
         }
 
         private void tsOpen_Click(object sender, EventArgs e)
-        {
+        { // Открытие документа
             DopForm dopForm = (DopForm)(this.ActiveMdiChild);
             dopForm.Open();
             mnuSave.Enabled = true;
         }
 
         private void tsSave_Click(object sender, EventArgs e)
-        {
+        { // Сохранение документа
             DopForm dopForm = (DopForm)this.ActiveMdiChild;
             dopForm.Save();
             mnuSave.Enabled = true;
@@ -181,7 +181,7 @@ namespace NotepadC_
         }
 
         private void tsSaveAs_Click(object sender, EventArgs e)
-        {
+        { // Сохранить как
             DopForm dopForm = (DopForm)(this.ActiveMdiChild);
             dopForm.SaveAs();
             mnuSave.Enabled = true;
@@ -189,19 +189,19 @@ namespace NotepadC_
         }
 
         private void tsCut_Click(object sender, EventArgs e)
-        {
+        { // Вырезание текста
             DopForm dopForm = (DopForm)(this.ActiveMdiChild);
             dopForm.Cut();
         }
 
         private void tsCopy_Click(object sender, EventArgs e)
-        {
+        { // Копирование текста
             DopForm dopForm = (DopForm)(this.ActiveMdiChild);
             dopForm.Copy();
         }
 
         private void tsPaste_Click(object sender, EventArgs e)
-        {
+        { // Вставка текста
             DopForm dopForm = (DopForm)(this.ActiveMdiChild);
             dopForm.Paste();
         }
